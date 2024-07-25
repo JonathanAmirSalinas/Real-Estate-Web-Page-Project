@@ -13,7 +13,8 @@
     --m-font:  1.1rem/1.6rem var(--ff);
     --m-font-hover:  1.3rem/1.8rem var(--ff);
     --l-font: 600 1.75rem/2.25rem var(--ff);
-    --xl-font: bold 2.25rem/2.75rem var(--ff);
+    --xl-font: bold 2.5rem/3rem var(--ff);
+    --xxl-font: bold 3.75rem/4.25rem var(--ff);
 
     --xs-spacing: 0.25rem;
     --s-spacing: 0.75rem;
@@ -58,7 +59,8 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #DDD;
+    z-index: 1;
     background-color: var(--color-background);
 }
 
@@ -82,6 +84,7 @@ header{
 .header-body .header-nav{
     display: none;
     gap: var(--m-spacing);
+    transition: 0.5s;
    
 }
 
@@ -118,6 +121,7 @@ main{
 }
 
 .main-container{
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -126,55 +130,74 @@ main{
 }
 
 .main-landing{
+    position: relative;
     height: 100vh;
     width: 100%;
-    max-width: 1560px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--color-text);
-    background-color: #237400;
+}
+
+.main-landing img{
+    position: absolute;
+    object-fit: cover;
+    opacity: 0.1;
+}
+
+.main-landing .landing-quote{
+    text-align: center;
+    flex-basis: 60ch;
+   
+}
+
+.landing-quote h1{
+    margin-bottom: var(--m-spacing);
+    color: var(--color-text);
+    font: var(--xl-font); 
+    transition: ease 0.5s;
+}
+
+.landing-quote p{
+    color: var(--color-text);
+    font: var(--m-font);
+    transition: ease 0.5s;
 }
 
 .main-properties{
     height: 40vh;
     width: 100%;
-    max-width: 1560px;
     background-color: aqua;
 }
 
 .main-agents{
     height: 40vh;
     width: 100%;
-    max-width: 1560px;
     background-color: orange;
 }
 
 .main-about{
     height: 40vh;
     width: 100%;
-    max-width: 1560px;
     background-color: purple;
 }
 
 .main-news{
     height: 40vh;
     width: 100%;
-    max-width: 1560px;
     background-color: peru;
 }
 
 .main-contacts{
     height: 40vh;
     width: 100%;
-    max-width: 1650px;
     background-color: green;
 }
 
 footer{
     height: 30vh;
     width: 100%;
-    background-color: aqua;
+    background-color: yellow;
 }
 
 @media (min-width: 680px){
@@ -188,4 +211,30 @@ footer{
     .header-action-bar-btn{
         display: none;
     }
+
+    .landing-quote h1{
+        font: var(--xxl-font);
+    }
+
+    
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-background);
+  }
