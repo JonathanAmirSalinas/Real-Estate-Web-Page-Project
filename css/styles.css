@@ -1,6 +1,6 @@
 :root{
-    --color-primary: #ac8100;
-    --color-primary-hover: #cd9900;
+    --color-primary: #ce9b00;
+    --color-primary-hover: #eaaf00;
 
     --color-text: #EEE;
 
@@ -462,10 +462,68 @@ main{
 }
 
 /* News Section ---------------------------------------------------------------------------*/
-.main-news{
-    height: 40vh;
+.main-services{
     width: 100%;
-    background-color: peru;
+    padding-bottom: var(--xxl-spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+    border-top: 1px solid #CCC;
+}
+
+.services-section-divider{
+    padding: var(--l-spacing);
+}
+
+.service-container{
+    width: 90%;
+    max-width: 1280px;
+    padding: var(--s-spacing);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--s-spacing);
+    border-radius: var(--border-radius);
+}
+
+.service-item{
+    padding: var(--s-spacing);
+    display: flex;
+    gap: 0.5rem;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.service-item:hover{
+    box-shadow: var(--box-shadow);
+}
+
+.service-item .material-symbols-outlined{
+    padding-top: var(--s-spacing);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-primary-hover);
+}
+
+.item-details .detail-header{
+    padding-bottom: var(--xs-spacing);
+    font: var(--m-font);
+    color: var(--color-primary-hover);
+
+}
+
+.item-details .detail-body{
+    padding-bottom: var(--m-spacing);
+    font: var(--xs-font);
+}
+
+.item-details .detail-learn-more{
+    color: var(--color-primary);
+}
+.detail-learn-more:hover{
+    color: var(--color-primary-hover);
 }
 
 /* Contact Section ---------------------------------------------------------------------------*/
@@ -535,6 +593,16 @@ footer{
 
     .about-header{
         font: var(--xl-font);
+    }
+
+    .service-container{
+        width: 90%;
+        max-width: 900px;
+        padding: var(--l-spacing);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--m-spacing);
+        border-radius: var(--border-radius);
     }
     
 }
