@@ -26,6 +26,8 @@
     --xl-spacing: 2rem;
     --xxl-spacing: 3.5rem;
 
+    --box-shadow: 0rem 0rem 1rem var(--color-primary);
+
     --border-radius: .5rem
 }
 
@@ -40,6 +42,12 @@ body{
     overflow-x: hidden;
     color: var(--color-text);
     background-color: var(--color-background);
+}
+
+.section-divider{
+    color: var(--color-primary);
+    font: var(--l-font);
+    transition: 0.5s;
 }
 
 
@@ -93,7 +101,8 @@ header{
    
 }
 
-.header-title{    font: var(--l-font);
+.header-title{    
+    font: var(--l-font);
     letter-spacing: 1px;
     cursor: pointer;
 }
@@ -105,6 +114,7 @@ header{
 }
 
 .header-nav-item:hover{
+    color: var(--color-primary);
     font: var(--h3-hover);
 }
 
@@ -180,10 +190,6 @@ main{
     display: flex;
     align-items: end;
     justify-content: space-between;
-    color: var(--color-primary);
-    font: var(--l-font);
-    transition: 0.5s;
-
 }
 
 .properties-section-divider .see-more-properties{
@@ -199,13 +205,13 @@ main{
 
 .main-properties{
     width: 100%;
-    padding-bottom: var(--m-spacing);
+    padding-bottom: var(--xxl-spacing);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: var(--color-background);
-    border: 1px solid #CCC;
+    border-top: 1px solid #CCC;
 }
 
 .properties-container{
@@ -283,10 +289,78 @@ main{
 
 /* Agents Section ---------------------------------------------------------------------------*/
 .main-agents{
-    height: 40vh;
     width: 100%;
-    background-color: orange;
+    max-width: 1650px;
+    padding-bottom: var(--xxl-spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #444;
+    border-top: 1px solid #CCC;
 }
+
+.agents-section-divider{
+    width: 90%;
+    padding:  var(--l-spacing);
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.agent-section-quote{
+    width: 90%;
+    padding-bottom: var(--s-spacing);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font: var(--s-font);
+}
+
+.agents-container{
+    padding: var(--s-spacing);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: var(--s-spacing);
+    border-radius: var(--border-radius);
+}
+
+.agent-item{
+    position: relative;
+    min-width: 250px;
+    border-radius: var(--border-radius);
+    background-color: #EEE;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.agent-item:hover{
+    box-shadow: var(--box-shadow);
+}
+
+
+.agent-item .agent-img{
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.agent-item .agent-details{
+    padding-left: var(--s-spacing);
+    padding-bottom: var(--s-spacing);
+    font: var(--m-font);
+    color: #222;
+    border-radius: var(--border-radius);
+}
+
+.agent-details .agent-profession{
+    font: var(--xs-font);
+}
+
 
 /* About Section ---------------------------------------------------------------------------*/
 .main-about{
@@ -333,7 +407,7 @@ footer{
         font: var(--xxl-font);
     }
 
-    .properties-section-divider{
+    .section-divider{
         font: var(--xl-font);
     }
 
@@ -347,6 +421,8 @@ footer{
         object-fit: cover;
         border-radius: var(--border-radius);
     }
+
+
 
     
 }
