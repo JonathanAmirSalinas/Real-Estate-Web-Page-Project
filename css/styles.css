@@ -1,27 +1,30 @@
 :root{
-    --color-primary: #237400;
+    --color-primary: #ac8100;
 
     --color-text: #EEE;
 
     --color-background: #333;
+    --color-background-light: #CCC;
 
 
-    --ff: "Playfair Display", serif;
+    --ff: "Oswald", sans-serif;
     
-    --xs-font: 0.25rem;
-    --s-font: 0.75rem;
-    --m-font:  1.1rem/1.6rem var(--ff);
-    --m-font-hover:  1.3rem/1.8rem var(--ff);
-    --l-font: 600 1.75rem/2.25rem var(--ff);
+    --xs-font:  1rem/1.5rem var(--ff);
+    --s-font:  bold  1.25rem/1.75rem var(--ff);
+    --m-font: bold  1.5rem/2rem var(--ff);
+    --l-font: bold 1.75rem/2.25rem var(--ff);
     --xl-font: bold 2.5rem/3rem var(--ff);
     --xxl-font: bold 3.75rem/4.25rem var(--ff);
+
+    --h3: 1.1rem/1.6rem var(--ff);
+    --h3-hover: 1.3rem/1.8rem var(--ff);
 
     --xs-spacing: 0.25rem;
     --s-spacing: 0.75rem;
     --m-spacing: 1rem;
     --l-spacing: 1.5rem;
     --xl-spacing: 2rem;
-    --xxl-spacing: 2.25rem;
+    --xxl-spacing: 3.5rem;
 
     --border-radius: .5rem
 }
@@ -39,6 +42,8 @@ body{
     background-color: var(--color-background);
 }
 
+
+/* Sidebar Section */
 .sidenav{
     position: absolute;
     top: 0;
@@ -51,6 +56,7 @@ body{
     background-color: #237400;
 }
 
+/* Header Section */
 header{
     position: fixed;
     top: 1;
@@ -59,7 +65,6 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #DDD;
     z-index: 1;
     background-color: var(--color-background);
 }
@@ -88,20 +93,19 @@ header{
    
 }
 
-.header-title{
-    font: var(--l-font);
+.header-title{    font: var(--l-font);
     letter-spacing: 1px;
     cursor: pointer;
 }
 
 .header-nav-item{
-    font: var(--m-font);
+    font: var(--h3);
     transition: 0.8s;
     cursor: pointer;
 }
 
 .header-nav-item:hover{
-    font: var(--m-font-hover);
+    font: var(--h3-hover);
 }
 
 .header-action-bar-btn{
@@ -115,6 +119,7 @@ header{
     background-color: #444;
 }
 
+/* Main Section ---------------------------------------------------------------------------*/
 main{
     height: 100%;
     width: 100%;
@@ -127,8 +132,10 @@ main{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-top: 1px solid #DDD;
 }
 
+/* Landing Section */
 .main-landing{
     position: relative;
     height: 100vh;
@@ -136,12 +143,14 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
+
     color: var(--color-text);
 }
 
 .main-landing img{
     position: absolute;
     object-fit: cover;
+    z-index: -1;
     opacity: 0.1;
 }
 
@@ -160,47 +169,155 @@ main{
 
 .landing-quote p{
     color: var(--color-text);
-    font: var(--m-font);
+    font: var(--s-font);
     transition: ease 0.5s;
 }
 
-.main-properties{
-    height: 40vh;
-    width: 100%;
-    background-color: aqua;
+/* Property Section --------------------------------------------------------------------------- */
+.properties-section-divider{
+    width: 90%;
+    padding:  var(--l-spacing);
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    color: var(--color-primary);
+    font: var(--l-font);
+    transition: 0.5s;
+
 }
 
+.properties-section-divider .see-more-properties{
+    color: #DDD;
+    font: var(--xs-font);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.see-more-properties:hover{
+    color: var(--color-primary);
+}
+
+.main-properties{
+    width: 100%;
+    padding-bottom: var(--m-spacing);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background);
+    border: 1px solid #CCC;
+}
+
+.properties-container{
+    padding: var(--s-spacing);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: var(--xs-spacing);
+    border-radius: var(--border-radius);
+}
+
+.property-item{
+    position: relative;
+    min-width: 450px;
+    border-radius: var(--border-radius);
+    background-color: #EEE;
+    cursor: pointer;
+}
+
+.property-item .property-img{
+    height: 350px;
+    width: 450px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+.property-item .property-details{
+    padding-left: var(--s-spacing);
+    padding-bottom: var(--s-spacing);
+    color: #222;
+}
+
+.property-details .property-price{
+    font: var(--m-font);
+}
+
+.property-price:hover{
+    color: var(--color-primary);
+}
+
+.property-details .property-location{
+    padding-bottom: var(--xs-spacing);
+    display: flex;
+    gap: var(--s-spacing);
+    font: var(--s-font);
+}
+
+
+.property-details .property-stats{
+    position: relative;
+    padding: var(--xs-spacing) ;
+    display: flex;
+    align-items: center;
+    gap: var(--s-spacing);
+    font: var(--xs-font);
+}
+
+.property-stats .property-status{
+    position: absolute;
+    right: 0;
+    display: flex;
+    gap: 0.5rem;
+    margin-right: var(--xl-spacing);
+    padding: var(--xs-spacing) var(--s-spacing);
+    border-radius: var(--border-radius);
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+.property-status .material-symbols-outlined{
+    color: forestgreen;
+}
+
+
+/* Agents Section ---------------------------------------------------------------------------*/
 .main-agents{
     height: 40vh;
     width: 100%;
     background-color: orange;
 }
 
+/* About Section ---------------------------------------------------------------------------*/
 .main-about{
     height: 40vh;
     width: 100%;
     background-color: purple;
 }
 
+/* News Section ---------------------------------------------------------------------------*/
 .main-news{
     height: 40vh;
     width: 100%;
     background-color: peru;
 }
 
-.main-contacts{
+/* Contact Section ---------------------------------------------------------------------------*/
+.main-contact{
     height: 40vh;
     width: 100%;
     background-color: green;
 }
 
+/* Footer Section ---------------------------------------------------------------------------*/
 footer{
     height: 30vh;
     width: 100%;
     background-color: yellow;
 }
 
-@media (min-width: 680px){
+/* Media Query Large Screen */
+@media (min-width: 700px){
 
     .header-body .header-nav{
         display: flex;
@@ -216,10 +333,25 @@ footer{
         font: var(--xxl-font);
     }
 
+    .properties-section-divider{
+        font: var(--xl-font);
+    }
+
+    .property-item{
+        margin: 0px var(--m-spacing);
+    }
+
+    .property-item .property-img{
+        height: 450px;
+        min-width: 650px;
+        object-fit: cover;
+        border-radius: var(--border-radius);
+    }
+
     
 }
 
-/* width */
+/* Scrollbar */
 ::-webkit-scrollbar {
     width: 10px;
   }
